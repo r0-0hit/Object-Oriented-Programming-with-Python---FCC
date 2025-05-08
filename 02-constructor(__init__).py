@@ -22,17 +22,17 @@ class Item:
     def apply_discount(self):
         self.price = self.price * self.pay_rate # ! don't use Item.pay_rate as if u assign a custom value it will not apply
 
-    # def __repr__(self):
-    #     #return f"Item: {self.name}, price: {self.price}, quantity: {self.quantity}"
-    #     return f"Item({self.name}, {self.price},{self.quantity})"
+    def __repr__(self):
+        return f"Item({self.name}, {self.price},{self.quantity})"
+        #return f"Item: {self.name}, price: {self.price}, quantity: {self.quantity}"
 
 item1 = Item("Phone", 100)
-
 # print(item1.calculate_total_price())
 
 
 item2 = Item("Laptop", 1000, 3)
-item2.has_numpad = True  # * can also assign custom attributes
+# * can also assign custom attributes
+#item2.has_numpad = True
 # print(item2.has_numpad)
 # print(item2.calculate_total_price())
 
