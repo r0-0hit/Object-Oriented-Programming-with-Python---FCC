@@ -28,39 +28,32 @@ class Item:
     def __repr__(self):
         return f"{self.__class__.__name__}({self.name}, {self.__price},{self.quantity})"
 
-    # * getter
     @property
     def name(self):
         return self.__name
 
-    # * setter
-    @name.setter
-    def name(self, value):
-        self.__name = value
+    def __connect(self, smpt_server):
+        pass
 
-    @property
-    def price(self):
-        return self.__price
+    def __prepare_body(self):
+        pass
 
-    def apply_discount(self, discount=.15):
-        self.__price = self.__price - self.__price * discount
+    def __send_body(self):
+        pass
 
-    def apply_increase(self, increase):
-        self.__price = self.__price + self.__price * increase
-
+    def send_email(self):
+        self.__connect("")
+        self.__prepare_body()
+        self.__send_body()
+        print("Email sent")
 
 item1 = Item("Item 1", 750)
 
-print(item1.name)
-item1.name = "Other name"
-print(item1.name)
+# ! this gives AttributeError: 'Item' object has no attribute 'send_body'
+# item1.send_body()
 
-print(item1.price)
-item1.apply_increase(.2)
-print(item1.price)
-item1.apply_discount()
-print(item1.price)
+item1.send_email()
 
 
 # TODO: read this article
-# https://www.datacamp.com/tutorial/encapsulation-in-python-object-oriented-programming
+# https://www.datacamp.com/tutorial/python-abstract-classes

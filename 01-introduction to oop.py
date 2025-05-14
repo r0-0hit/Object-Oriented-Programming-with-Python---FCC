@@ -34,3 +34,7 @@ item2.price = 2000
 item2.quantity = 3
 print(item2.calculate_total_price(item2.price, item2.quantity))
 # print(item2.calculate_total_price())
+
+
+# TODO: read this
+# https://www.geeksforgeeks.org/python-oops-concepts/
